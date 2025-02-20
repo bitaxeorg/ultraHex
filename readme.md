@@ -27,7 +27,7 @@ bitaxeHex is a follow on to the [bitaxe](https://github.com/skot/bitaxe) that in
 - The BM1366 is available (new) for around $15 each.
 
 ## Current Status
-- v304 This is going to be the official release candidate, but boards have not been produced yet, this version is not final.
+- v304 is the latest revision but it has a known problem with the Vcore regulator.  There is a workaround, see the bottom of this readme.
 - Power draw is around 50W @12V.
 - ESP32 miner firmware will configure the power supply to run at the proper voltage.
 - This is an _advanced_ build! If you don't have experience building boards, you should probably go build a single ASIC bitaxe first to get the technique down.
@@ -38,7 +38,7 @@ bitaxeHex is a follow on to the [bitaxe](https://github.com/skot/bitaxe) that in
 - The recommended heatsink is not anodized and very conductive on all surfaces. This _should_ be OK as the ASIC tops are not known to be conductive, but this needs some more investigation.
 
 ## Revision List
-- v304 is a work in progress, some capacitor changes, additional features
+- v304 has a few new minor features, but it has a problem with the Vcore output capacitance.
 - v303 has some improvements in the layout and the 33R inline resistors have been removed.
 - V302 is the current working version of this board.  If you want to build this, pull down this git tag.
 - V301 does not work, the power supply maintains voltage, but overheats in a drastic way
@@ -63,3 +63,9 @@ bitaxeHex is a follow on to the [bitaxe](https://github.com/skot/bitaxe) that in
 ## Building
 - Check out [building.md](building.md) for PCB ordering tips
 - Check out [assembly.md](assembly.md) for assembly tips
+
+## V304 Modification
+The Vcore regulator output doesn't have enough bulk capacitance, and the regulator won't run in a stable mode.
+In order to fix this, you can hack on a couple Aluminium Polymer electrolytic capacitors.  See this diagram for the location and part numbers.
+
+![v304 modification](doc/v304-fix.png)
