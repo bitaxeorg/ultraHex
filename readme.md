@@ -66,6 +66,6 @@ bitaxeHex is a follow on to the [bitaxe](https://github.com/skot/bitaxe) that in
 
 ## V304 Modification
 The Vcore regulator output doesn't have enough bulk capacitance, and the regulator won't run in a stable mode.
-In order to fix this, you can hack on a couple Aluminium Polymer electrolytic capacitors.  See this diagram for the location and part numbers.
+In order to fix this, you can hack on a couple 180 uF Aluminium Polymer electrolytic capacitors.  See this diagram for the schematic and part numbers.  The specified parts have wire leads, and you can solder one on each side of the board across the existing ceramic output caps.
 
 ![v304 modification](doc/v304-fix.png)
